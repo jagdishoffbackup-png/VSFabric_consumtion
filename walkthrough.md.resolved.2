@@ -1,0 +1,41 @@
+# Fabric Estimator App Walkthrough (v2.0)
+
+Version 2.0 brings a Pro UI, advanced export formats (DXF, HPGL), and optimization constraints.
+
+## New Features
+- **Pro UI**: Settings are now on the right side with a modern header.
+- **Exports**:
+    - **Excel w/ Image**: The visual layout is embedded directly in the Excel file.
+    - **DXF**: Export standard CAD file for marker software.
+    - **HPGL/PLT**: Export plotter files.
+- **Optimization**:
+    - **Rotation**: Allow 90° rotation to fit pieces better.
+    - **Regenerate**: Click to shuffle pieces and retry packing for potentially higher efficiency.
+- **Metrics**: Visuals now display in Centimeters (cm). Wastage % is shown alongside Efficiency.
+
+## How to Run
+
+1. **Open Terminal** (if not already open).
+2. **Navigate to the project directory**:
+   ```bash
+   cd /Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator
+   ```
+3. **Run the helper script** (Installs `ezdxf`, `xlsxwriter`):
+   ```bash
+   bash run_app.sh
+   ```
+
+## Usage
+1. **Settings (Right Panel)**:
+   - Sets Fabric Width, Buffer, and Shrinkage.
+   - Check **Allow 90° Rotation** to let the packer rotate pieces for efficiency.
+2. **Upload**:
+   - Upload PDF files (One Size per File recommended).
+3. **Configure**:
+   - Adjust **Quantities** in the main table.
+4. **Calculate**:
+   - Click **Calculate / Regenerate Layout**.
+   - If efficiency is low, click again to try a different packing order.
+5. **Analyze & Export**:
+   - View the Layout (in cm) and metrics (Length, Wastage).
+   - Use the **Exports** section to download the Excel Report, DXF, or PLT files.

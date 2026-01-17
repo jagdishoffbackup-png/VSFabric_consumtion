@@ -1,0 +1,36 @@
+# Fabric Estimator App Walkthrough
+
+I have upgraded the Streamlit application to include visualization, efficiency calculation, shrinkage, and quantity multipliers.
+
+## New Features
+- **Efficiency & Packing**: The app now uses a rectangle packing algorithm (`rectpack`) to simulate how pieces fit on the fabric, calculating a realistic efficiency % instead of a guess.
+- **Shrinkage Control**: You can specify separate shrinkage percentages for Length (X) and Width (Y). The app scales the pattern pieces accordingly before packing.
+- **Quantity Multipliers**: After uploading, you can set the number of garments (Quantities) for each detected size to calculate the total run.
+- **Visual Layout**: A plot shows the nested layout of the pattern pieces on the fabric roll.
+
+## How to Run
+
+1. **Open Terminal** (if not already open).
+2. **Navigate to the project directory**:
+   ```bash
+   cd /Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator
+   ```
+3. **Run the helper script** (This will install the new `rectpack` dependency):
+   ```bash
+   bash run_app.sh
+   ```
+
+## Usage
+1. **Settings**:
+   - Set **Fabric Width** and **Marker Buffer** (for cutting margins).
+   - Set **Shrinkage %** for Length and Width.
+2. **Upload**:
+   - Upload PDF files. **Recommendation**: Use one PDF file per size (e.g. `Shirt-S.pdf`, `Shirt-M.pdf`).
+3. **Configure Quantities**:
+   - A table will appear showing the uploaded files and detected sizes.
+   - Adjust the **Quantity** for each size (e.g., 50 sets of Size S, 100 sets of Size M).
+4. **Calculate**:
+   - Click **Calculate Consumption & Visualize Layout**.
+5. **Results**:
+   - View the nesting diagram, Efficiency %, and Total Length needed.
+   - Download the detailed Excel report.

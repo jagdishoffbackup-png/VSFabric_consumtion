@@ -1,0 +1,36 @@
+# Fabric Estimator App Walkthrough
+
+I have built the Streamlit application for estimating fabric consumption from VStitcher PDF patterns.
+
+## Files Created
+- **[app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py)**: The main application file containing the logic to parse PDFs and the Streamlit UI.
+- **[requirements.txt](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/requirements.txt)**: List of Python dependencies.
+- **`run_app.sh`**: A helper script to set up the environment and run the app.
+
+## How to Run
+
+1. **Open Terminal** (if not already open).
+2. **Navigate to the project directory**:
+   ```bash
+   cd /Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator
+   ```
+3. **Run the helper script**:
+   ```bash
+   bash run_app.sh
+   ```
+   *This script will create a virtual environment, install dependencies, and launch the app.*
+
+   **OR Manual Steps**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   streamlit run app.py
+   ```
+
+## Usage
+1. The app will open in your browser.
+2. Adjust the **Fabric Width** in the sidebar if needed.
+3. Upload one or more **PDF files** (your VStitcher patterns).
+4. The app will extract the vector paths, calculate the area, and show a table with the estimated fabric yield (including the 15% waste factor).
+5. Click **Download Excel Report** to save the results.
