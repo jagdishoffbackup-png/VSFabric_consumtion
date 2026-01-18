@@ -50,3 +50,10 @@
     - [x] **Grouping:** Implement "Fuzzy" Shape Signature (relaxed precision).
     - [x] **UI:** Update Piece Details table to aggregate rows by Shape, listing multiple sizes per row.
     - [x] **Logic:** Update override application to broadcast settings to all pieces in a shape family.
+- [x] Implement V3.0 Features (True Shape Nesting)
+    - [x] **Specs:** Define Pixel-Based Packing Logic in spec.
+    - [x] **Dependencies:** Add `numpy` and `rasterio` (or just `features.rasterize` from shapely/custom) to requirements.
+    - [x] **Engine:** Implement `rasterize_polygon` helper.
+    - [x] **Engine:** Implement `PixelPacker` class (Bottom-Left-Fill heuristic).
+    - [x] **Integration:** Replace `rectpack` with `PixelPacker` in `app.py` (add toggle).
+    - [x] **Visualization:** Update plotting to handle arbitrary placements (not just rects).

@@ -94,6 +94,36 @@ Reduce user effort by grouping the "same" piece across different sizes (e.g., "P
     -   The `override_configs` map will key off `signature` alone.
     -   When applying overrides in the packing loop, look up config by `p['signature']`.
 
+### Version 3.0 Specification (True Shape Nesting)
+#### Core Concept
+Replace the bounding-box packer (`rectpack`) with a custom **Pixel-Based (Raster) Packer**. This allows pieces to "interlock" (e.g., placing a small piece inside the curve of another), significantly improving efficiency for apparel patterns.
+
+#### Technical Architecture
+1.  **Dependencies**: Add `numpy`.
+    *   We will use `shapely` for vector operations and `rasterio.features` OR custom logic to rasterize polygons into `numpy` boolean grids.
+    *   *Decision*: Use `rasterio` if easy, else write a simple scanline rasterizer to keep deps low. `skimage.draw.polygon` is also an option. Let's start with a custom **CV2**-style rasterizer using `PIL.ImageDraw` (which comes with `streamlit` dependencies usually) or `scikit-image`. Actually, `matplotlib.path` contains point-in-polygon logic which is robust.
+    *   *Selection*: `numpy` + `cv2` (opencv-python-headless) or `PIL` is best for speed. Let's use `PIL` (Pillow) since `streamlit` already installs it. `ImageDraw.Draw(img).polygon(...)` produces a mask.
+
+2.  **Resolution Strategy**:
+    *   Define `PIXELS_PER_CM = 2` (5mm resolution) or configurable.
+    *   Higher resolution = Better fit, Slower performance.
+
+3.  **The Packing Algorithm (Heuristic)**:
+    *   **Init**: Create a "Fabric Mask" (large numpy array of Zeros). Width = Fabric Width * Resolution. Height = Growable.
+    *   **Queue**: Sort pieces by Area (Descending).
+    *   **Loop**: For each piece:
+        1.  Rasterize it into a small boolean mask (`piece_mask`).
+        2.  **Search**: Slide `piece_mask` over the `fabric_mask` from Bottom-Left (y=0, x=0).
+        3.  **Check**: `if not np.any(fabric_mask[y:y+h, x:x+w] & piece_mask)`:
+            *   **Placed!**
+            *   Update `fabric_mask |= (piece_mask at x,y)`.
+            *   Save Coordinates.
+            *   Break and move to next piece.
+
+4.  **UI Updates**:
+    *   Add "Nesting Mode" Toggle: `["Fast (Rectangular)", "Advanced (True Shape)"]`.
+    *   Add "Quality/Resolution" Slider (Low/Med/High).
+
 ## Verification Plan
 ### Automated Tests
 - I cannot easily run automated UI tests for Streamlit in this environment.

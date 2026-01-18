@@ -40,7 +40,7 @@
 - [x] Implement V2.4 Features (Costing & DXF)
     - [x] **Costing:** Add 'Cost per Unit' input and calculate Total Cost per fabric.
     - [x] **Costing:** Update Excel Export with cost data.
-    - [x] **DXF Import:** Implement [extract_polygons_from_dxf](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py#68-144) using `ezdxf`.
+    - [x] **DXF Import:** Implement [extract_polygons_from_dxf](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py#66-142) using `ezdxf`.
     - [x] **DXF Import:** Update UI to accept `.dxf` uploads and handle units.
 - [x] Implement V2.5 Features (Smart Rotation)
     - [x] **Smart Rotation:** Add 'Auto-Align for Min Bounding Box' checkbox.
@@ -50,10 +50,10 @@
     - [x] **Grouping:** Implement "Fuzzy" Shape Signature (relaxed precision).
     - [x] **UI:** Update Piece Details table to aggregate rows by Shape, listing multiple sizes per row.
     - [x] **Logic:** Update override application to broadcast settings to all pieces in a shape family.
-- [x] Implement V3.0 Features (True Shape Nesting)
-    - [x] **Specs:** Define Pixel-Based Packing Logic in spec.
-    - [x] **Dependencies:** Add `numpy` and `rasterio` (or just `features.rasterize` from shapely/custom) to requirements.
-    - [x] **Engine:** Implement `rasterize_polygon` helper.
-    - [x] **Engine:** Implement [PixelPacker](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py#229-349) class (Bottom-Left-Fill heuristic).
-    - [x] **Integration:** Replace `rectpack` with [PixelPacker](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py#229-349) in [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) (add toggle).
-    - [x] **Visualization:** Update plotting to handle arbitrary placements (not just rects).
+- [ ] Implement V3.0 Features (True Shape Nesting)
+    - [ ] **Specs:** Define Pixel-Based Packing Logic in spec.
+    - [ ] **Dependencies:** Add `numpy` and `rasterio` (or just `features.rasterize` from shapely/custom) to requirements.
+    - [ ] **Engine:** Implement `rasterize_polygon` helper.
+    - [ ] **Engine:** Implement `PixelPacker` class (Bottom-Left-Fill heuristic).
+    - [ ] **Integration:** Replace `rectpack` with `PixelPacker` in [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) (add toggle).
+    - [ ] **Visualization:** Update plotting to handle arbitrary placements (not just rects).
