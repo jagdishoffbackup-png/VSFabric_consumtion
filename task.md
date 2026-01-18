@@ -46,3 +46,7 @@
     - [x] **Smart Rotation:** Add 'Auto-Align for Min Bounding Box' checkbox.
     - [x] **Smart Rotation:** Implement logic to calculate minimum rotated rectangle and re-orient pieces.
     - [x] **Smart Rotation:** Update Piec Details to show if a piece was auto-rotated (optional, or just apply it).
+- [x] Implement V2.6 Features (Cross-Size Grouping)
+    - [x] **Grouping:** Implement "Fuzzy" Shape Signature (relaxed precision).
+    - [x] **UI:** Update Piece Details table to aggregate rows by Shape, listing multiple sizes per row.
+    - [x] **Logic:** Update override application to broadcast settings to all pieces in a shape family.

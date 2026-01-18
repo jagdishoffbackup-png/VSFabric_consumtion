@@ -10,7 +10,8 @@ Version 2.1 introduces Grainline controls to solve orientation mismatches and su
 - **Improved Engine**: Packing now strictly respects your grainline choices.
 - **Cost Estimation (New in V2.4)**: Input fabric cost to get total order cost.
 - **DXF Import (New in V2.4)**: Directly upload `.dxf` files with unit selection.
-- **Smart Rotation (New in V2.5)**: "Auto-Align" checkbox automatically finds the best rotation for each piece to minimize waste, overriding manual grainlines for maximum efficiency.
+- **Smart Rotation (New in V2.5)**: "Auto-Align" checkbox automatically finds the best rotation for each piece to minimize waste.
+- **Auto-Grouping (New in V2.6)**: Identical shapes across different sizes (e.g., "Pocket Bag") are now grouped into a single row. Assigning "Lining" to this row applies it to *all* graded sizes automatically.
 - **Pro UI**: Updated title and layout.
 
 ## How to Run

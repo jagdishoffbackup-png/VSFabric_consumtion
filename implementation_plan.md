@@ -76,6 +76,24 @@ Build a single-file Streamlit application (`app.py`) that calculates fabric cons
     5.  **Integration**: In the packing loop, if checkbox is checked, apply this rotation *before* standard grainline rotation or packing logic.
     - *Note*: Usually, if this is enabled, it *overrides* standard "Length/Cross" file settings because it claims to find the "True" grain alignment (assuming the piece's bounding box aligns with grain).
 
+### Version 2.6 Specification (Cross-Size Grouping)
+#### Goal
+Reduce user effort by grouping the "same" piece across different sizes (e.g., "Pocket Bag" for Sizes 36, 38, 40) into a single configuration row.
+
+#### Implementation
+1.  **Fuzzy Signature**: Update `get_shape_signature`.
+    -   Round `norm_area` to 1 decimal place (instead of 2).
+    -   Round `aspect_ratio` to 1 decimal place (instead of 2).
+    -   *Result*: Small grading variations will now yield the *same signature*.
+2.  **Aggregation Logic**:
+    -   Group `all_pieces` by `signature` ONLY (remove `size` from the grouping key).
+    -   For each group, collect list of sizes involved (e.g., `["36", "38", "40"]`).
+    -   Create one row per signature.
+    -   **Column 'Size'**: Display string "Mixed (3 sizes)" or list them.
+3.  **Override Application**:
+    -   The `override_configs` map will key off `signature` alone.
+    -   When applying overrides in the packing loop, look up config by `p['signature']`.
+
 ## Verification Plan
 ### Automated Tests
 - I cannot easily run automated UI tests for Streamlit in this environment.
