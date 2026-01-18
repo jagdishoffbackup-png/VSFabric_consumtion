@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data/Temp
+*.pdf
+*.dxf
+*.xlsx
+*.plt
+*.hpgl
+temp_piece_*.png
