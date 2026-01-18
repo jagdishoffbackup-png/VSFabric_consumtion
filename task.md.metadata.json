@@ -1,6 +1,6 @@
 {
   "artifactType": "ARTIFACT_TYPE_TASK",
-  "summary": "Added V2.4 features (Costing & DXF Import) to the task list.",
-  "updatedAt": "2026-01-18T06:03:04.296593Z",
-  "version": "11"
+  "summary": "Added V2.5 Smart Rotation task.",
+  "updatedAt": "2026-01-18T09:44:35.820631Z",
+  "version": "13"
 }

@@ -4,9 +4,9 @@
     - [x] Create project directory
     - [x] Create implementation plan
 - [x] Implement Basic Application
-    - [x] Create `requirements.txt`
-    - [x] Create `app.py` core logic
-    - [x] Create `app.py` UI
+    - [x] Create [requirements.txt](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/requirements.txt)
+    - [x] Create [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) core logic
+    - [x] Create [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) UI
 - [x] Implement Advanced Features
     - [x] Install `rectpack` and `matplotlib`
     - [x] Implement Shrinkage Logic (Length/Width %)
@@ -40,9 +40,9 @@
 - [x] Implement V2.4 Features (Costing & DXF)
     - [x] **Costing:** Add 'Cost per Unit' input and calculate Total Cost per fabric.
     - [x] **Costing:** Update Excel Export with cost data.
-    - [x] **DXF Import:** Implement `extract_polygons_from_dxf` using `ezdxf`.
+    - [x] **DXF Import:** Implement [extract_polygons_from_dxf](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py#65-141) using `ezdxf`.
     - [x] **DXF Import:** Update UI to accept `.dxf` uploads and handle units.
-- [x] Implement V2.5 Features (Smart Rotation)
-    - [x] **Smart Rotation:** Add 'Auto-Align for Min Bounding Box' checkbox.
-    - [x] **Smart Rotation:** Implement logic to calculate minimum rotated rectangle and re-orient pieces.
-    - [x] **Smart Rotation:** Update Piec Details to show if a piece was auto-rotated (optional, or just apply it).
+- [ ] Implement V2.5 Features (Smart Rotation)
+    - [ ] **Smart Rotation:** Add 'Auto-Align for Min Bounding Box' checkbox.
+    - [ ] **Smart Rotation:** Implement logic to calculate minimum rotated rectangle and re-orient pieces.
+    - [ ] **Smart Rotation:** Update Piec Details to show if a piece was auto-rotated (optional, or just apply it).

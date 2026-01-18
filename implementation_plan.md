@@ -64,6 +64,18 @@ Build a single-file Streamlit application (`app.py`) that calculates fabric cons
         - 1 inch = 72 points.
     - Return list of Shapely Polygons.
 
+### Version 2.5 Specification (Smart Rotation)
+#### Minimum Area Logic
+- **Goal**: Minimize waste by finding the optimal rotation for *each* piece that results in the smallest Rectangular Bounding Box.
+- **Constraints**: This changes the grainline. It must be an **Optional Setting** (checkbox: "Auto-Align to Grain (Min Bounding Box)").
+- **Implementation**:
+    1.  Create helper `get_min_area_rotation_angle(poly)`.
+    2.  Use `shapely.minimum_rotated_rectangle(poly)` to get the tightest box.
+    3.  Calculate the angle of that box's long edge relative to X-axis.
+    4.  Rotate the polygon by `-angle`.
+    5.  **Integration**: In the packing loop, if checkbox is checked, apply this rotation *before* standard grainline rotation or packing logic.
+    - *Note*: Usually, if this is enabled, it *overrides* standard "Length/Cross" file settings because it claims to find the "True" grain alignment (assuming the piece's bounding box aligns with grain).
+
 ## Verification Plan
 ### Automated Tests
 - I cannot easily run automated UI tests for Streamlit in this environment.
