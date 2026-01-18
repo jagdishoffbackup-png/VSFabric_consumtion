@@ -1,0 +1,11 @@
+streamlit
+pymupdf
+shapely
+pandas
+openpyxl
+rectpack
+matplotlib
+ezdxf
+xlsxwriter
+xlsxwriter
+numpy
