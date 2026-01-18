@@ -40,6 +40,30 @@ Build a single-file Streamlit application (`app.py`) that calculates fabric cons
     - Display DataFrame with `st.dataframe`.
     - `st.download_button` for Excel export.
 
+### Version 2.4 Specification (Costing & DXF)
+#### Costing Logic
+- **UI**: Add `st.number_input("Cost per Meter", ...)` inside the Fabric & Marker expander.
+- **Calculation**: `Total Cost = Marker Length (m) * Cost per Meter`.
+- **Display**: Add a metric card for "Estimated Cost".
+- **Export**: Add "Unit Cost" and "Total Cost" columns/cells to the Excel "Summary" sheet.
+
+#### DXF Import Logic
+- **Upload**: Update `st.file_uploader` to type `["pdf", "dxf"]`.
+- **Parsing**: Create `extract_polygons_from_dxf(file_stream)`:
+    - Use `ezdxf.read(file_stream)`.
+    - Iterate `MSP` (Modelspace).
+    - Query `LWPOLYLINE` and `POLYLINE` entities.
+    - Extract points `(x, y)`.
+    - **Scaling**: DXF is often unitless. We will assume millimeters (common in apparel) or check `$INSUNITS`.
+    - **UI**: Add a radio button "DXF Import Units" (mm, cm, inch) to let user verify. Default to `mm`.
+    - Convert all to internal points (like PDF) or standardize on CM immediately for the packer.
+        - *Decision*: Convert everything to **Points** to match existing PDF logic (1 pt = 1/72 inch) or refactor app to work linearly in CM.
+        - *Simpler Approach*: Convert incoming DXF coords -> CM -> Points.
+        - 1 mm = 2.83465 points.
+        - 1 cm = 28.3465 points.
+        - 1 inch = 72 points.
+    - Return list of Shapely Polygons.
+
 ## Verification Plan
 ### Automated Tests
 - I cannot easily run automated UI tests for Streamlit in this environment.

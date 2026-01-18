@@ -1,6 +1,6 @@
 {
   "artifactType": "ARTIFACT_TYPE_TASK",
-  "summary": "Updated task list with advanced features",
-  "updatedAt": "2026-01-17T15:58:28.584758Z",
-  "version": "3"
+  "summary": "Added V2.4 features (Costing & DXF Import) to the task list.",
+  "updatedAt": "2026-01-18T06:03:04.296593Z",
+  "version": "11"
 }

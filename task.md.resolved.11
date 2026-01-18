@@ -4,9 +4,9 @@
     - [x] Create project directory
     - [x] Create implementation plan
 - [x] Implement Basic Application
-    - [x] Create `requirements.txt`
-    - [x] Create `app.py` core logic
-    - [x] Create `app.py` UI
+    - [x] Create [requirements.txt](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/requirements.txt)
+    - [x] Create [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) core logic
+    - [x] Create [app.py](file:///Users/jagdishs/.gemini/antigravity/scratch/fabric-estimator/app.py) UI
 - [x] Implement Advanced Features
     - [x] Install `rectpack` and `matplotlib`
     - [x] Implement Shrinkage Logic (Length/Width %)
@@ -40,8 +40,8 @@
 - [x] Verify V2.1
     - [x] Updated Logic
     - [x] Updated Walkthrough
-- [x] Implement V2.4 Features (Costing & DXF)
-    - [x] **Costing:** Add 'Cost per Unit' input and calculate Total Cost per fabric.
-    - [x] **Costing:** Update Excel Export with cost data.
-    - [x] **DXF Import:** Implement `extract_polygons_from_dxf` using `ezdxf`.
-    - [x] **DXF Import:** Update UI to accept `.dxf` uploads and handle units.
+- [ ] Implement V2.4 Features (Costing & DXF)
+    - [ ] **Costing:** Add 'Cost per Unit' input and calculate Total Cost per fabric.
+    - [ ] **Costing:** Update Excel Export with cost data.
+    - [ ] **DXF Import:** Implement `extract_polygons_from_dxf` using `ezdxf`.
+    - [ ] **DXF Import:** Update UI to accept `.dxf` uploads and handle units.

@@ -8,6 +8,8 @@ Version 2.1 introduces Grainline controls to solve orientation mismatches and su
     - **Cross (0°)**: Keeps PDF upright orientation aligned with Fabric Width.
     - **Bias (45°)**: Rotates pieces 45° for bias packing.
 - **Improved Engine**: Packing now strictly respects your grainline choices.
+- **Cost Estimation (New in V2.4)**: Input fabric cost to get total order cost.
+- **DXF Import support (New in V2.4)**: Directly upload `.dxf` files (standard AAMA/ASTM) with unit selection (mm/cm/inch).
 - **Pro UI**: Updated title and layout.
 
 ## How to Run
@@ -30,8 +32,10 @@ Version 2.1 introduces Grainline controls to solve orientation mismatches and su
    - **Grainline (Global)**: Set default grainline for the file (Length/Cross/Bias).
    - **Piece Details (Advanced)**:
      - Expand the "Piece Details" section.
-     - View thumbnails of grouped piece shapes.
-     - Set specific **Grainline Overrides** (e.g., set a Sleeve to "Bias" while keeping the rest "Length").
+     - **Previews:** View thumbnails of shapes.
+     - **Fabric**: Assign specific fabrics (e.g., Lining, Self) to different groups.
+     - **Grainline Override**: Force specific rotation (Length/Cross/Bias) per shape.
+     - **Qty Override**: Set specific counts (e.g., "1" for a label) to ignore global order multipliers.
 4. **Calculate**: Click **Calculate / Regenerate Layout**.
 5. **Analyze**: View the layout. Note that 45° pieces will appear rotated.
 6. **Export**: download reports as needed.
